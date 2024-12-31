@@ -38,24 +38,24 @@ exports.imageProcessing = asyncHandler(async (req, res, next) => {
   next();
 });
 
-// @desc    Get list of User
+// @desc    Get list of Users
 // @route   GET  /api/v1/users
 // @access  private
 
 exports.getUsers = getAllOf(User, "Users");
 
-// @desc    Get User by id
+// @desc    Get a User by id
 // @route   GET  /api/v1/users/:id
 // @access  private
 
 exports.getUser = getOneByIdOf(User);
 
-// @desc    Create User
+// @desc    Create new User
 // @route   POST  /api/v1/users
 // @access  Private
 exports.createUser = createOneOf(User);
 
-// @desc    update User by Id
+// @desc    update a User by Id
 // @route   PUT /api/v1/User/:id
 // @access  private
 exports.updateUser = asyncHandler(async (req, res, next) => {
@@ -104,22 +104,22 @@ exports.updatePassword = asyncHandler(async (req, res, next) => {
     .json({ massage: "Password has Updated", data: user.password });
 });
 
-// @desc    DELETE User by Id
+// @desc    DELETE a User by Id
 // @route   DELETE /api/v1/User/:id
 // @access  private
 exports.deleteUser = deleteOneByIdOf(User);
 
-// @desc    get my data
+// @desc    get a my data
 // @route   PUT /api/v1/users/getMe
-// @access  Private/Protect
+// @access  Private/ Protect
 exports.getMe = asyncHandler(async (req, res, next) => {
   req.params.id = req.user._id;
   next();
 });
 
-// @desc    Update my password
+// @desc    Update my (user's) password
 // @route   PUT /api/v1/users/changeMyPassword
-// @access  Private/Protect
+// @access  Private/ Protect
 exports.changeMyPassword = asyncHandler(async (req, res, next) => {
   const user = await User.findByIdAndUpdate(
     req.user._id,
@@ -135,7 +135,7 @@ exports.changeMyPassword = asyncHandler(async (req, res, next) => {
   res.status(200).json({ massage: "Password Updated", data: user, token });
 });
 
-// @desc    Update logged user data (without password)
+// @desc    Update logged user data except Password 
 // @route   PUT /api/v1/users/updateMyData
 // @access  Private/Protect
 exports.updateMyData = asyncHandler(async (req, res, next) => {
