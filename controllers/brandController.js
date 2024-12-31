@@ -27,29 +27,29 @@ exports.imageProcessing = asyncHandler(async (req, res, next) => {
   next();
 });
 
-// @desc    Get list Brand
+// @desc    Get list of Brand
 // @route   GET  /api/v1/Brands
 // @access  Public
 
 exports.getBrands = getAllOf(Brand, "Brands");
 
-// @desc    Get Brand by id
+// @desc    Get a Brand by id
 // @route   GET  /api/v1/Brands/:id
 // @access  Public
 
 exports.getBrandById = getOneByIdOf(Brand);
 
-// @desc    Create Brand
+// @desc    Create a new Brand
 // @route   POST  /api/v1/Brands
 // @access  Private
 exports.createBrand = createOneOf(Brand);
 
-// @desc    update Brand by Id
+// @desc    update a Brand by Id
 // @route   PUT /api/v1/Brand/:id
 // @access  private
 exports.updateBrandById = updateOneById(Brand);
 
-// @desc    DELETE Brand by Id
+// @desc    DELETE a Brand by Id
 // @route   DELETE /api/v1/Brand/:id
 // @access  private
 exports.deleteBrandById = deleteOneByIdOf(Brand);
