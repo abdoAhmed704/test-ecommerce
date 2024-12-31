@@ -2,7 +2,7 @@ const multer = require("multer");
 const SendError = require("../utils/sendError");
 
 const multerOptions = () => {
-  // 2 ------------> memoryStorage
+  // memoryStorage
   const storage = multer.memoryStorage();
 
   const fileFilteration = function (req, file, cb) {
