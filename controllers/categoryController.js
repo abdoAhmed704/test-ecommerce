@@ -29,27 +29,27 @@ exports.imageProcessing = asyncHandler(async (req, res, next) => {
   next();
 });
 
-// @desc    Get list category
+// @desc    Get list of categories
 // @route   GET  /api/v1/categories
 // @access  Public
 exports.getCategories = getAllOf(Category, "categories");
 
-// @desc    Get category by id
+// @desc    Get a category by id
 // @route   GET  /api/v1/categories/:id
 // @access  Public
 exports.getCategoryById = getOneByIdOf(Category);
 
-// @desc    Create category
+// @desc    Create new category
 // @route   POST  /api/v1/categories
 // @access  Private
 exports.createCategory = createOneOf(Category);
 
-// @desc    update Category by Id
+// @desc    update a Category by Id
 // @route   PUT /api/v1/category/:id
 // @access  private
 exports.updateCategoryById = updateOneById(Category);
 
-// @desc    DELETE Category by Id
+// @desc    DELETE a Category by Id
 // @route   DELETE /api/v1/category/:id
 // @access  private
 exports.deleteCategoryById = deleteOneByIdOf(Category);
