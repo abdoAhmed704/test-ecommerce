@@ -54,7 +54,7 @@ exports.imageProcessing = asyncHandler(async (req, res, next) => {
 // @access  Public
 exports.getProducts = getAllOf(Product, "Products");
 
-// @desc    Get Product by id
+// @desc    Get a Product by id
 // @route   GET  /api/v1/Products/:id
 // @access  Publicfr4
 exports.getProduct = asyncHandler(async (req, res, next) => {
@@ -66,17 +66,17 @@ exports.getProduct = asyncHandler(async (req, res, next) => {
   res.status(200).json({ data: product });
 });
 
-// @desc    Create Product
+// @desc    Create a Product
 // @route   POST  /api/v1/Products
 // @access  Private
 exports.createProduct = createOneOf(Product);
 
-// @desc    update Product by Id
+// @desc    update a Product by Id
 // @route   PUT /api/v1/Product/:id
 // @access  private
 exports.updateProduct = updateOneById(Product);
 
-// @desc    DELETE Product by Id
+// @desc    DELETE a Product by Id
 // @route   DELETE /api/v1/Product/:id
 // @access  private
 exports.deleteProduct = deleteOneByIdOf(Product);
