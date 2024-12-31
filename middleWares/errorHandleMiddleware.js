@@ -1,4 +1,4 @@
-// @decs    Handle the global Error for the whole app
+// @decs    Handle the global Error (any arror in the app)
 const errorHandling = (error, req, res, next) => {
   error.statusCode = error.statusCode || 500;
   error.status = error.status || "error";
